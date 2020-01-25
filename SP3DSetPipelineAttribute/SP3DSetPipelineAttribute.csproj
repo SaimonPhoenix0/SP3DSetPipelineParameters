@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4498B17-B0F4-4074-86C2-10F3CF071609}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SP3DSetPipelineAttribute</RootNamespace>
+    <AssemblyName>SP3DSetPipelineAttribute</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\..\Program Files %28x86%29\Smart3D\3DRefData\SharedContent\CustomCmd\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonClient">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Smart3D\Core\Container\Bin\Assemblies\Release\CommonClient.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonMiddle">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Smart3D\Core\Container\Bin\Assemblies\Release\CommonMiddle.dll</HintPath>
+    </Reference>
+    <Reference Include="Intergraph.CommonToolkit.Client">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Smart3D\Core\Container\Bin\SxS\Intergraph\Intergraph.CommonToolkit.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="SystemMiddle, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1495b921d589236c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Smart3D\Core\Container\Bin\Assemblies\Release\SystemMiddle.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmPipelineParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPipelineParameters.Designer.cs">
+      <DependentUpon>FrmPipelineParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyCustomCommand.cs" />
+    <Compile Include="PipelineDefaultTemperatureAndPressure.cs" />
+    <Compile Include="PipelineParameter.cs" />
+    <Compile Include="SP3DFilter.cs" />
+    <Compile Include="SP3DModalCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmPipelineParameters.resx">
+      <DependentUpon>FrmPipelineParameters.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
